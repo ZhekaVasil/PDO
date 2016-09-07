@@ -6,6 +6,8 @@ if(isset($_POST['del'])){
     $stmt2->bindParam(':name', $_POST['del']);
     if($stmt2->execute()){
         echo 'Category was successful delited';
+    } else {
+        echo 'Ooops! An Error;';
     };
 
 }
