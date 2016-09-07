@@ -7,6 +7,7 @@ if(isset($_POST['name'])){
     $stmt->bindParam(':name', $name );
     $stmt->bindParam(':alt_name', $alt_name );
     $stmt->execute();
+    echo 'Category was successful added';
     unset($conn);
 }
 ?>
@@ -16,3 +17,4 @@ if(isset($_POST['name'])){
     <label>Alt Name: <input type="text" name="alt_name"></label>
     <input type="submit" value="SEND">
 </form>
+<a href="cat.php">Back</a>
