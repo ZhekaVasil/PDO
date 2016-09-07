@@ -22,6 +22,7 @@ $stmt = $conn->query("SELECT * FROM news");
 <form method="post" action="" name="form" onchange='form.submit()' >
     <label>Edit news:</label>
     <select name="show">
+        <option>Choose news</option>
         <?php while ($data = $stmt->fetch()) {
             if($data['name'] == $_POST['show']){
                 echo "<option value='{$data['name']}' name='{$data['name']}' selected>{$data['name']}</option>";
