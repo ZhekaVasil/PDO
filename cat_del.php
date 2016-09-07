@@ -4,8 +4,10 @@ require 'connect.php';
 if(isset($_POST['del'])){
     $stmt2 = $conn->prepare("DELETE FROM categories WHERE name = :name ");
     $stmt2->bindParam(':name', $_POST['del']);
-    $stmt2->execute();
-    echo 'Category was successful delited';
+    if($stmt2->execute()){
+        echo 'Category was successful delited';
+    };
+
 }
 $stmt = $conn->query("SELECT * FROM categories");
 ?>
