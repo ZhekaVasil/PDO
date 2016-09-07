@@ -21,6 +21,7 @@ $stmt = $conn->query("SELECT alt_name FROM categories");
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
 </head>
+<body>
 
 <form method="post" action="">
     <label>Choose category: <select name='cat_name'>
@@ -32,8 +33,9 @@ $stmt = $conn->query("SELECT alt_name FROM categories");
     <label><textarea name='text'></textarea></label>
     <input type='submit' value='ADD'>
 </form>
-</html>
 <?php
 unset($conn);
 ?>
 <a href="news.php">Back</a>
+</body>
+</html>
