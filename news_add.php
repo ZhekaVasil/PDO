@@ -32,7 +32,7 @@ $stmt = $conn->query("SELECT alt_name FROM categories");
     <label><textarea name='text'></textarea></label>
     <input type='submit' value='ADD'>
 </form>
-
+</html>
 <?php
 unset($conn);
 ?>
