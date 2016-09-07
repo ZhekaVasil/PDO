@@ -17,6 +17,7 @@ $stmt = $conn->query("SELECT * FROM categories");
 <form method="post" action="" name="form" onchange='form.submit()' >
     <p>Edit category:</p>
     <select name="show">
+        <option>Choose category</option>
         <?php while ($data = $stmt->fetch()) {
             if($data['name'] == $_POST['show']){
                 echo "<option value='{$data['name']}' name='{$data['name']}' selected>{$data['alt_name']}</option>";
