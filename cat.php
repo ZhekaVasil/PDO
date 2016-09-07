@@ -10,5 +10,6 @@
     <li><a href="cat_del.php">Delite category</li>
     <li><a href="cat_edit.php">Edit category</li>
 </ul>
+<a href="index.html">Back</a>
 </body>
 </html>
