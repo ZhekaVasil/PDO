@@ -5,7 +5,11 @@ if(isset($_POST['name'])){
     $stmt->bindParam(':name', $_POST['name']);
     $stmt->bindParam(':new_name', $_POST['new_name']);
     $stmt->bindParam(':alt_name', $_POST['new_alt_name']);
-    $stmt->execute();
+    if( $stmt->execute()){
+        echo 'Category was successful edited';
+    } else {
+        echo 'Ooops! An Error;';
+    }
 }
 $stmt = $conn->query("SELECT * FROM categories");
 
