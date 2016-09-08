@@ -8,7 +8,7 @@ if(isset($_POST['cat_name'])){
         move_uploaded_file($_FILES["filename"]["tmp_name"], "upload/".$file );
         $fileSRC = '<img src="upload/'.$file.'">';
     } else {
-        echo("Ошибка загрузки файла");
+       /* echo("Ошибка загрузки файла");*/
     }
     $stmt = $conn->prepare("SELECT id FROM categories WHERE alt_name = :post  ");
     $stmt->bindParam(':post',$_POST['cat_name'] );
@@ -18,8 +18,13 @@ if(isset($_POST['cat_name'])){
     $stmt2 = $conn->prepare("INSERT INTO news (cat_id, name, text) VALUES (:cat_id, :name, :text)");
     $stmt2->bindParam(':cat_id', $id['id'] );
     $stmt2->bindParam(':name', $_POST['name'] );
-    $pic = $fileSRC."<br>".$_POST['text'];
-    $stmt2->bindParam(':text', $pic );
+    if(strlen($fileSRC)){
+        $pic = $fileSRC."<br>".$_POST['text'];
+        $stmt2->bindParam(':text', $pic );
+    } else {
+        $stmt2->bindParam(':text', $_POST['text'] );
+    }
+
     $stmt2->execute();
 
 }
