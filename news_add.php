@@ -25,7 +25,9 @@ if(isset($_POST['cat_name'])){
         $stmt2->bindParam(':text', $_POST['text'] );
     }
 
-    $stmt2->execute();
+    if($stmt2->execute()){
+        header("Location: blog.php");
+    };
 
 }
 $stmt = $conn->query("SELECT alt_name FROM categories");
