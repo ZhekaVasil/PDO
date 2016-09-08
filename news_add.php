@@ -4,7 +4,7 @@ if(isset($_POST['cat_name'])){
     $fileSRC ='';
     if(is_uploaded_file($_FILES["filename"]["tmp_name"]))
     {
-        $file = iconv('utf-8', 'windows-1251', $_FILES["filename"]["name"]);
+        $file = iconv('utf-8', 'utf-8', $_FILES["filename"]["name"]);
         move_uploaded_file($_FILES["filename"]["tmp_name"], "upload/".$file );
         $fileSRC = '<img src="upload/'.$file.'">';
     } else {

@@ -26,3 +26,4 @@ while ($data = $stm2->fetch()){
     <hr>
 </div>";
 }
+unset($conn);
