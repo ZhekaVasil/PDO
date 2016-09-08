@@ -17,7 +17,7 @@ for($i=1; $i<=$numOfPages; $i++){
     echo "<a href='blog.php?page={$i}'><input type='button' value='{$i}'></a>";
 }
 $page = ($_GET['page']-1)*2;
-$stm2 = $conn->query("SELECT * FROM news LIMIT {$page},2");
+$stm2 = $conn->query("SELECT * FROM news ORDER BY id DESC LIMIT {$page},2 ");
 while ($data = $stm2->fetch()){
     echo " 
   <div>

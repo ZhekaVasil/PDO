@@ -45,7 +45,7 @@ $stmt = $conn->query("SELECT alt_name FROM categories");
             }?>
         </select></label><br>
     <label>Enter name: <input type='text' name='name'></label><br>
-    <input type="file" name="filename" id="file">
+    <input type="file" name="filename" id="file" multiple>
     <label><textarea name='text'></textarea></label>
     <input type='submit' value='ADD'>
 </form>
